@@ -13,9 +13,12 @@
     border: none;
 }
 
-.navbar {
+.footer {
+    background-color: #242526;
+    color: #fff;
     display: flex;
-    align-items: center;
-    justify-items: center;
-    /* justify-content: end; */
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'tomkin-regular';
 }
