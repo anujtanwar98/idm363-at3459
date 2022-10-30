@@ -15,9 +15,17 @@ code {
 
 @font-face {
   font-family: 'tomkin-medium';
-  src: url('./asset/fonts/tomkin-medium.woff2');
+  src: url('../public/asset/fonts/tomkin-medium.woff2');
 }
 @font-face {
   font-family: 'tomkin-regular';
-  src:url('./asset/fonts/tomkin-regular.woff2');
+  src:url('../public/asset/fonts/tomkin-regular.woff2');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'tomkin-medium';
+}
+
+p, span, a, li {
+  font-family: 'tomkin-regular';
 }
