@@ -7,28 +7,52 @@ import { Edit } from "./components/pages/Edit";
 import { Navbar } from "./components/navbar/Navbar";
 
 // import { initialize_store } from './features/product';
-import { collection, onSnapshot, query } from 'firebase/firestore'
-import { useState } from 'react'
-import { db } from './firestore'
+import { collection, onSnapshot, query } from 'firebase/firestore';
+import { useState, useEffect } from 'react'
+import { db } from './firestore';
 
-function App() {
+// function App() {
 
-  const [headphones, setHeadphones] = useState([])
-  const headphonesArray = []
+//   const [headphones, setHeadphones] = useState([])
+//   const headphonesArray = []
 
-  const q = query(collection(db, 'headphones'))
-  onSnapshot(q, querySnapshot => {
-    querySnapshot.forEach(doc => {
-      console.log(doc.id)
-      console.log(doc.data())
-      const headphonesData = {
-        keyName: doc.id,
-        ...doc.data(),
-      }
-      headphonesArray.push(headphonesData)
-    })
-    setHeadphones(headphonesArray)
-  })
+//   const q = query(collection(db, 'headphones'))
+//   onSnapshot(q, querySnapshot => {
+//     querySnapshot.forEach(doc => {
+//       console.log(doc.id)
+//       console.log(doc.data())
+//       const headphonesData = {
+//         keyName: doc.id,
+//         ...doc.data(),
+//       }
+//       headphonesArray.push(headphonesData)
+//     })
+//     setHeadphones(headphonesArray)
+//   })
+  function App() {
+
+    const [headphones, setHeadphones] = useState([])
+    const headphonesArray = []
+  
+    function fn_query_firebase() {
+      const q = query(collection(db, 'headphones'))
+      onSnapshot(q, querySnapshot => {
+        querySnapshot.forEach(doc => {
+          console.log(doc.id)
+          console.log(doc.data())
+          const headphonesData = {
+            keyName: doc.id,
+            ...doc.data(),
+          }
+          headphonesArray.push(headphonesData)
+        })
+        setHeadphones(headphonesArray)
+      })
+    }
+  
+    useEffect(() => {
+      fn_query_firebase()
+    }, [])
 
   return (
     <div className="App">
