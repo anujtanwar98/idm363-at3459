@@ -2,7 +2,6 @@ import Headphonescard from '../headphones/Headphonescard';
 import { collection, onSnapshot, query, getDocs } from 'firebase/firestore';
 import { useState, useEffect } from 'react'
 import { db } from '../../firestore';
-// import IndividualIntervals from '../slider/IndividualIntervals';
 import './Home.css';
 
 export function Home () {
@@ -26,7 +25,6 @@ export function Home () {
     return (
         <>
         <h1>Home</h1>
-        {/* <IndividualIntervals/> */}
         <div className="allheadphones">
             {headphones.map((headphone) => {
                 return <Headphonescard key={headphone.id} headphone={headphone} />

@@ -6,12 +6,6 @@ import './Headphonescard.css';
 const Headphonescard = (headphones) => {
   return (
     <>
-    {/* <div className="headphonescard">
-        <p className="headphone-title">{headphones.headphone.name}</p>
-        <p className="headphone-title">{headphones.headphone.price}</p>
-    </div>
-    <Button variant="primary">Buy Now</Button>{' '} */}
-
     <Card className='allcards' style={{ width: '18rem' }}>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
