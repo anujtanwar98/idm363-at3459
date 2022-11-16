@@ -7,7 +7,7 @@ const Headphonescard = (headphones) => {
   return (
     <>
     <Card className='allcards' style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={headphones.headphone.headphoneimage} />
       <Card.Body>
         <Card.Title>{headphones.headphone.name}</Card.Title>
         <Card.Text>{headphones.headphone.price}</Card.Text>
