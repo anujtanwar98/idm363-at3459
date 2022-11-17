@@ -11,7 +11,9 @@ const Headphonescard = (headphones) => {
       <Card.Body>
         <Card.Title>{headphones.headphone.name}</Card.Title>
         <Card.Text>{headphones.headphone.price}</Card.Text>
-        <Button variant="primary">Add to Cart</Button>
+        <div class="d-flex justify-content-center">
+        <Button className="center" variant="primary">Add to Cart</Button>
+        </div>
       </Card.Body>
     </Card>
     </>

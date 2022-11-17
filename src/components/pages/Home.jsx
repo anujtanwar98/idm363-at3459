@@ -24,7 +24,7 @@ export function Home () {
         )
     return (
         <>
-        <h1>Home</h1>
+        <h1 className="text-center">Home</h1>
         <div className="allheadphones">
             {headphones.map((headphone) => {
                 return <Headphonescard key={headphone.id} headphone={headphone} />
