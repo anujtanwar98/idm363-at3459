@@ -14,6 +14,9 @@ export function Navbar() {
           <Nav.Link to="/edit" as={NavLink}>
             Edit Data
           </Nav.Link>
+          <Nav.Link to="/add-headphones" as={NavLink}>
+            Add Headphones
+          </Nav.Link>
         </nav>
         <Button style={{ width: "3rem", height: "3rem", position: "relative" }}
         variant="outline-primary"

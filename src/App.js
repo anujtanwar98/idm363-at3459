@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 import { Home } from "./components/pages/Home";
 import { Edit } from "./components/pages/Edit";
 import { Navbar } from "./components/navbar/Navbar";
+import { AddHeadphones } from "./components/pages/AddHeadphones";
 // import Headphonescard from './components/headphones/Headphonescard';
 
 // import { collection, onSnapshot, query } from 'firebase/firestore';
@@ -61,6 +62,7 @@ import { Navbar } from "./components/navbar/Navbar";
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/edit" element={<Edit />} />
+          <Route path="/add-headphones" element={<AddHeadphones />}/>
         </Routes>
         <Footer />
       </Container>
