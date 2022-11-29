@@ -30,21 +30,21 @@ export function AddHeadphones () {
                 <Button className="center" variant="primary" onClick={createHeadphones}>Add Headphones</Button> */}
 
                 
-
+                <Form>
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Headphones Name</Form.Label>
-                    <Form.Control type="text" placeholder="Normal text" onChange={(e) => setNewHeadphones(e.target.value)} />
+                    <Form.Control type="text" placeholder="Title" onChange={(e) => setNewHeadphones(e.target.value)} />
                 </Form.Group>
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Headphones Price</Form.Label>
-                    <Form.Control type="text" placeholder="Normal text"onChange={(e) => setNewHeadphonesPrice(e.target.value)} />
+                    <Form.Control type="number" placeholder="Price"onChange={(e) => setNewHeadphonesPrice(e.target.value)} />
                 </Form.Group>
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Headphones image</Form.Label>
-                    <Form.Control type="file" onChange={(e) => setNewHeadphonesImage(e.target.files[0])} />
+                    <Form.Control type="text" placeholder="Image Url" onChange={(e) => setNewHeadphonesImage(e.target.value)} />
                 </Form.Group>
                 <Button className="center" variant="primary" onClick={createHeadphones}>Add Headphones</Button>
-                
+                </Form>
                
             </div>
         </div>

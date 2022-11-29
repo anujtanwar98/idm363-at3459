@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes,Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Home } from "./components/pages/Home";
+import { Cart } from "./components/pages/Cart";
 import { Edit } from "./components/pages/Edit";
 import { Navbar } from "./components/navbar/Navbar";
 import { AddHeadphones } from "./components/pages/AddHeadphones";
@@ -62,6 +63,7 @@ import { AddHeadphones } from "./components/pages/AddHeadphones";
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/edit" element={<Edit />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/add-headphones" element={<AddHeadphones />}/>
         </Routes>
         <Footer />

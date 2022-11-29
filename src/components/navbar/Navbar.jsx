@@ -7,7 +7,7 @@ export function Navbar() {
   return (
     <NavbarBoot sticky="top" className="navbar bg-dark shadow-lg mb-3 text-white">
       <Container>
-        <nav className="me-auto">
+        {/* <nav className="me-auto"> */}
           <Nav.Link to="/" as={NavLink}>
             UXID Headphones
           </Nav.Link>
@@ -17,7 +17,8 @@ export function Navbar() {
           <Nav.Link to="/add-headphones" as={NavLink}>
             Add Headphones
           </Nav.Link>
-        </nav>
+        {/* </nav> */}
+        <Nav.Link to="/cart" as={NavLink}>
         <Button style={{ width: "3rem", height: "3rem", position: "relative" }}
         variant="outline-primary"
         >
@@ -26,6 +27,7 @@ export function Navbar() {
         </svg>
         {/* <div className="rounded-circle bg-danger d-flex justify-content-center align-items-center" style={{ color:"white", width:"1.5rem", height:"1.5rem", position:"absolute", bottom: 0, right: 0, transform: "translate(25%, 25%)", }}>2</div> */}
         </Button>
+        </Nav.Link>
       </Container>
     </NavbarBoot>
   );
