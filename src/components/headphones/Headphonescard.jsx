@@ -12,7 +12,7 @@ const Headphonescard = (headphones) => {
       <Card.Body>
         <Card.Title>{headphones.headphone.name}</Card.Title>
         <Card.Text>{headphones.headphone.price}</Card.Text>
-        <div class="d-flex justify-content-center">
+        <div className="d-flex justify-content-center">
           {/* {quantity === 0 ? ( */}
             <Button className="center" variant="primary">Add to Cart</Button>
           {/* ): <div className="d-flex align-items-center flex-column" style={{ gap: ".5rem"}}>
