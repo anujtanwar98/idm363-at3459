@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './Headphonescard.css';
+import { format_price } from '../utilities/Currency';
 
 const Headphonescard = (headphones) => {
   // const quantity = 0
@@ -11,7 +12,7 @@ const Headphonescard = (headphones) => {
       <Card.Img variant="top" src={headphones.headphone.headphoneimage} />
       <Card.Body>
         <Card.Title>{headphones.headphone.name}</Card.Title>
-        <Card.Text>{headphones.headphone.price}</Card.Text>
+        <Card.Text>{format_price(headphones.headphone.price)}</Card.Text>
         <div className="d-flex justify-content-center">
           {/* {quantity === 0 ? ( */}
             <Button className="center" variant="primary">Add to Cart</Button>
