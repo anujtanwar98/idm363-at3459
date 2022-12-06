@@ -1,36 +1,35 @@
-import { collection, onSnapshot, query, getDocs, updateDoc } from 'firebase/firestore';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Headphonescard from '../headphones/Headphonescard';
 import TableEdit from '../table/TableEdit';
-
-
+import { collection, onSnapshot, query, getDocs } from 'firebase/firestore';
 import { useState, useEffect } from 'react'
 import { db } from '../../firestore';
+import './Home.css';
 
 export function Edit () {
+        const [headphones, setHeadphones] = useState([])
+        useEffect(() => {
+
+            const q = query(collection(db, "headphones"));
+            const getHeadphones = onSnapshot(q, (querySnapshot) => {
+                const headphonesArray = []
+                querySnapshot.forEach((doc) => {
+                    headphonesArray.push({...doc.data(),id:doc.id})
+                    // console.log(doc.id, " => ", doc.data());
+                })
+                setHeadphones(headphonesArray)
+            }
+            );
+            return () => getHeadphones();
+            
+
+        }, []
+        )
     return (
         <>
-        <h1 className="text-center">Edit</h1>
-        {/* <TableEdit /> */}
-        <div className="d-flex justify-content-center">
-            <div className="d-flex flex-column" style={{ gap: "1rem"}}>
-                <Form>
-                <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Headphones Name</Form.Label>
-                    <Form.Control type="text" placeholder="Title" />
-                </Form.Group>
-                <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Headphones Price</Form.Label>
-                    <Form.Control type="text" placeholder="Price" />
-                </Form.Group>
-                <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Headphones image</Form.Label>
-                    <Form.Control type="text" placeholder="Image Url" />
-                </Form.Group>
-                <Button className="center" variant="primary">Edit Headphones</Button>
-                </Form>
-            </div>
+        <h1 className="text-center">Edit/Admin</h1>
+        <div className="allheadphones">
+            {headphones.map((headphone) => {
+                return <TableEdit key={headphone.id} headphone={headphone} />
+            })}
         </div>
         </>
     )

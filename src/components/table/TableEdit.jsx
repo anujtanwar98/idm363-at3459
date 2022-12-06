@@ -6,12 +6,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 
-function TableEdit() {
+const TableEdit = (headphones) => {
   return (
     <Table striped bordered hover variant="dark">
       <thead>
         <tr>
-          <th>#</th>
           <th>Headphone Name</th>
           <th>Headphone Price</th>
           <th>Headphone Image URL</th>
@@ -20,14 +19,13 @@ function TableEdit() {
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>hello</td>
-          <td>hello</td>
-          <td>hello</td>
+          <td>{headphones.headphone.name}</td>
+          <td>{headphones.headphone.price}</td>
+          <td>{headphones.headphone.headphoneimage}</td>
           <td>
-            <button className="btn btn-primary">Edit</button>
+            <button className="btn btn-danger">Edit</button>
             <br />
-            <button className="btn btn-danger">Delete</button>
+            {/* <button className="btn btn-danger">Delete</button> */}
           </td>
         </tr>
       </tbody>
