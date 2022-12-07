@@ -7,6 +7,7 @@ import { Cart } from "./components/pages/Cart";
 import { Edit } from "./components/pages/Edit";
 import { Navbar } from "./components/navbar/Navbar";
 import { AddHeadphones } from "./components/pages/AddHeadphones";
+import { FormEdit} from "./components/formedit/FormEdit";
 // import Headphonescard from './components/headphones/Headphonescard';
 
 // import { collection, onSnapshot, query } from 'firebase/firestore';
@@ -65,6 +66,7 @@ import { AddHeadphones } from "./components/pages/AddHeadphones";
           <Route path="/edit" element={<Edit />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/add-headphones" element={<AddHeadphones />}/>
+          <Route path="/edit/:documentId" element={<FormEdit />}/>
         </Routes>
         <Footer />
       </Container>

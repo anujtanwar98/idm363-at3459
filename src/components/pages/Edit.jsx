@@ -28,7 +28,9 @@ export function Edit () {
         <h1 className="text-center">Edit/Admin</h1>
         <div className="allheadphones">
             {headphones.map((headphone) => {
-                return <TableEdit key={headphone.id} headphone={headphone} />
+                return <>
+                <TableEdit key={headphone.id} headphone={headphone} />
+                </>
             })}
         </div>
         </>
