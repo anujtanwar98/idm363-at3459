@@ -41,7 +41,7 @@ const DetailPage = (headphones) => {
             {loading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             {headphone && (
-                <Card style={{ width: '18rem' }}>
+                <Card style={{ width: '38rem' }}>
                     <Card.Img variant="top" src={headphone.headphoneimage} />
                     <Card.Body>
                         <Card.Title>{headphone.name}</Card.Title>

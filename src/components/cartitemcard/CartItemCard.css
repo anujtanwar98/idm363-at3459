@@ -1,7 +1,7 @@
-.allcards {
+.cartallcards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px auto;
+    margin: 5px auto;
     width: 100%;
   }
