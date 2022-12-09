@@ -5,13 +5,15 @@ import { collection, onSnapshot, query, getDocs, updateDoc } from 'firebase/fire
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
+import Card from 'react-bootstrap/Card';
+import { format_price } from '../utilities/Currency';
+import './TableEdit.css';
 
 
 const TableEdit = (headphones) => {
   return (
     <>
-    {/* <div class="my-table"> */}
-    <Table striped bordered hover variant="dark">
+    {/* <Table striped bordered hover variant="dark">
       <thead>
         <tr>
           <th>Headphone Name</th>
@@ -26,15 +28,23 @@ const TableEdit = (headphones) => {
           <td>{headphones.headphone.price}</td>
           <td>{headphones.headphone.headphoneimage}</td>
           <td>
-            {/* <button className="btn btn-danger"> */}
-            <Link to={`/edit/${headphones.headphone.id}`}>Edit</Link>              
-            {/* </button> */}
-            <br />
-            {/* <button className="btn btn-danger">Delete</button> */}
+            <Link className='btn btn-danger' to={`/edit/${headphones.headphone.id}`}>Edit</Link>
           </td>
         </tr>
       </tbody>
-    </Table>
+    </Table> */}
+
+    <Card className='allcards' style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={headphones.headphone.headphoneimage} />
+      <Card.Body>
+        <Card.Title>{headphones.headphone.name}</Card.Title>
+        <Card.Text>{format_price(headphones.headphone.price)}</Card.Text>
+        <div className="d-flex justify-content-center">
+          <Link className='btn btn-danger' to={`/edit/${headphones.headphone.id}`}>Edit</Link>  
+        </div>
+      </Card.Body>
+    </Card>
+
     {/* </div> */}
     </>
   );

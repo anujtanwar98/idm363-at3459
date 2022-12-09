@@ -8,6 +8,7 @@ import { Edit } from "./components/pages/Edit";
 import { Navbar } from "./components/navbar/Navbar";
 import { AddHeadphones } from "./components/pages/AddHeadphones";
 import { FormEdit} from "./components/formedit/FormEdit";
+import  DetailPage  from "./components/detailpage/DetailPage";
 // import Headphonescard from './components/headphones/Headphonescard';
 
 // import { collection, onSnapshot, query } from 'firebase/firestore';
@@ -67,6 +68,7 @@ import { FormEdit} from "./components/formedit/FormEdit";
           <Route path="/cart" element={<Cart />} />
           <Route path="/add-headphones" element={<AddHeadphones />}/>
           <Route path="/edit/:documentId" element={<FormEdit />}/>
+          <Route path="/detailpage/:documentId" element={<DetailPage />}/>
         </Routes>
         <Footer />
       </Container>

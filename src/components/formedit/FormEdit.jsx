@@ -6,6 +6,7 @@ import { async } from '@firebase/util';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 
 
@@ -15,6 +16,7 @@ export const FormEdit = () => {
     const [headphoneNewName, setHeadphoneNewName] = useState("")
     const [headphoneNewPrice, setHeadphoneNewPrice] = useState("")
     const [headphoneNewImage, setHeadphoneNewImage] = useState("")
+    const [headphoneNewDescription, setHeadphoneNewDescription] = useState("")
 
     
     
@@ -26,6 +28,7 @@ export const FormEdit = () => {
             name: headphoneNewName || headphone.name, 
             price: headphoneNewPrice || headphone.price, 
             headphoneimage: headphoneNewImage || headphone.headphoneimage,
+            description: headphoneNewDescription || headphone.description
         })
 
         // redirect to edit page 
@@ -85,7 +88,7 @@ export const FormEdit = () => {
     <Form>
         <h1 className='text-center'>FormEdit</h1>
         <div className="d-flex justify-content-center">
-        <div className="d-flex flex-column" style={{ gap: "1rem"}}>
+        <div className="d-flex flex-column" style={{ gap: "1rem", width: "40rem"}}>
 
         {/* <div className="block">
             <label for="">Recipe Title</label>
@@ -105,7 +108,15 @@ export const FormEdit = () => {
             <Form.Label>Headphones image</Form.Label>
             <Form.Control type="text" placeholder="Image Url" value={headphoneNewImage || headphone.headphoneimage} onChange={(e) => setHeadphoneNewImage(e.target.value)} />
         </Form.Group>
+        <Form.Group controlId="formFile" className="mb-3">
+            <Form.Label>Headphones Description</Form.Label>
+            <Form.Control as="textarea" rows={8} placeholder="Description" value={headphoneNewDescription || headphone.description} onChange={(e) => setHeadphoneNewDescription(e.target.value)} />
+        </Form.Group>
         <Button className="center" variant="primary" onClick={updateHeadphone}>Update</Button>
+        <Link className='btn btn-dark' to={`/edit`}>Back</Link>
+        <br />
+        <br />
+        <br />
         </div>
         </div>
     </Form>
