@@ -7,7 +7,7 @@ import { format_price } from '../utilities/Currency';
 export function Cart () {
   const getCart = () => {
     const cart = localStorage.getItem('cart')
-    const defaultCart = {cartItems: [], totalVale: 0}
+    const defaultCart = {cartItems: [], totalValue: 0}
     return cart ? JSON.parse(cart) : defaultCart
 
   }
